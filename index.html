@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="vendor/rangeslider.js-2.3.0/rangeslider.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBgvS2qPFYEfT5k3XAagE4NBFQTB0UW4h4"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="vendor/rangeslider.js-2.3.0/rangeslider.min.js"></script>
+    <title>Red Light Runners</title>
+  </head>
+  <body class="container">
+    <div class="page-header">
+        <h1>Red Light Runners!</h1>
+    </div>
+    <div id="map-canvas"></div>
+    <div class="footer">
+        <br/>
+      <input type="range"
+        min="0"
+        max="100"
+        step="1"
+        value="0"
+        data-orientation="horizontal">
+        <br/>
+    </div>
+    Made with publicly available data from the City of Greensboro
+    <script>
+        if($('input[type="range"]').length) {
+            console.log('found slider, init');
+            $('input[type="range"]').rangeslider({
+                // Deactivate the feature detection
+            polyfill: false,
+            // Callback function
+            onInit: function() {
+
+            },
+            // Callback function
+            onSlide: function(position, value) {
+                console.log('onSlide');
+                console.log('position: ' + position, 'value: ' + value);
+            },
+            // Callback function
+            onSlideEnd: function(position, value) {
+                console.log('onSlideEnd');
+                console.log('position: ' + position, 'value: ' + value);
+            }
+            });
+        } else {
+            console.log('did not find range slider!');
+        }
+    </script>
+  </body>
+</html>

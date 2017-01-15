@@ -1,0 +1,17 @@
+html, body, #map-canvas {
+  height: 92%;
+  margin: 0px;
+  padding: 0px;
+}
+
+h1 {
+  position: relative;
+  margin-left: 100px;
+  color: red;
+}
+
+#footer {
+  position: relative;
+  margin-top: 650px;
+  font-size: 20px;
+}
